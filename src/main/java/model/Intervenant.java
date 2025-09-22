@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author sio2
- */
 public abstract class Intervenant {
     
     private int id ;
@@ -17,8 +9,6 @@ public abstract class Intervenant {
     public Intervenant() {
     }
     
-    
-
     public Intervenant(int id, String nom, String prenom) {
         this.id = id;
         this.nom = nom;
@@ -51,4 +41,19 @@ public abstract class Intervenant {
 
     public abstract double calculCoutProjet(int nbJours);
 
+    public int nbProjetsSuperieurs(double montant) {
+        if (this instanceof Salarie) {
+            Salarie s = (Salarie) this;
+            int count = 0;
+            if (s.getProjetsResponsable() != null) {
+                for (Projet p : s.getProjetsResponsable()) {
+                    if (p != null && p.getMontant() > montant) {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+        return 0;
+    }
 }
