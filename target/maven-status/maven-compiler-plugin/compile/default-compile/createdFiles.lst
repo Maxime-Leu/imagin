@@ -1,9 +1,11 @@
 model\Salarie.class
+test\TestCategorie.class
 test\TestSalarie.class
 test\TestPrestataire.class
 test\TestIntervenant.class
 model\Societe.class
 test\TestSociete.class
+model\Categorie.class
 model\Prestataire.class
 model\Intervenant.class
 com\mycompany\imagin\Imagin.class
