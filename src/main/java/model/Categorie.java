@@ -3,16 +3,31 @@ package model;
 import java.util.ArrayList;
 
 public class Categorie {
+    private int id;
     private String nom;
-    private ArrayList<Salarie> lesSalaries;
+    
+    
+    private ArrayList<Intervenant> lesIntervenants;
 
-    public Categorie(String nom, ArrayList<Salarie> lesSalaries) {
-        this.nom = nom;
-        this.lesSalaries = lesSalaries;
+    public void setId(int id) {
+        this.id = id;
     }
+
+    public Categorie(int id, String nom) {
+        this.id = id;
+        this.nom = nom;
+    }
+
+   
 
     public String getNom() {
         return nom;
+    }
+
+   
+
+    public int getId() {
+        return id;
     }
 
     public Categorie() {
@@ -22,23 +37,26 @@ public class Categorie {
         this.nom = nom;
     }
 
-    public ArrayList<Salarie> getLesSalaries() {
-        return lesSalaries;
+    public ArrayList<Intervenant> getLesIntervenants() {
+        return lesIntervenants;
     }
     
-    public void setLesSalaries(ArrayList<Salarie> lesSalaries) {
-        this.lesSalaries = lesSalaries;
+    public void setLesIntervenants(ArrayList<Intervenant> lesIntervenants) {
+        this.lesIntervenants = lesIntervenants;
     }
 
-    public void addUnPrestataire(Salarie unSalarie){
-        if (lesSalaries == null){
-            lesSalaries = new ArrayList<Salarie>();
+    public void addUnIntervenant(Intervenant unIntervenant){
+        if (lesIntervenants == null){
+            lesIntervenants = new ArrayList<Intervenant>();
         }
-        lesSalaries.add(unSalarie);
+        lesIntervenants.add(unIntervenant);
     }
     
-    public int getNombreSalaries(){
-        return 0;
+    public int getNombreIntervenants(){
+        if (lesIntervenants == null) {
+            return 0; 
+        }
+        return lesIntervenants.size();
     }
 }
 

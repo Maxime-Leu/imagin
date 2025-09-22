@@ -15,8 +15,8 @@ public class TestCategorie {
         Salarie s1 = new Salarie("2000-05-05", 300, 2, "nani", "zack");
         Salarie s2 = new Salarie("2000-05-12", 301, 1, "bassem", "allosalem");
        
-        categorie.addUnPrestataire(s1);
-        categorie.addUnPrestataire(s2);
+        categorie.addUnIntervenant(s1);
+        categorie.addUnIntervenant(s2);
 
        
         System.out.println("Categorie : " + categorie.getNom());
